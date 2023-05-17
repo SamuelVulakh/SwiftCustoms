@@ -51,6 +51,13 @@ The CustomTextField that I have built is basically a single text field with para
       ...
     }
     
+    // If You'd Like To Add A Title On Top Of The Text Field
+    VStack {
+      ...
+      CustomTextField("Text", $text, showTitle: true)
+      ...
+    }
+    
 ```
 
 ## License
