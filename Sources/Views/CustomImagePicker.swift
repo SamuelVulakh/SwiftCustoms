@@ -20,11 +20,11 @@ public struct CustomImagePicker: UIViewControllerRepresentable {
         self._type = type
     }
     
-    func makeCoordinator() -> ImagePickerCoordinator {
+    public func makeCoordinator() -> ImagePickerCoordinator {
         ImagePickerCoordinator(image: $image)
     }
     
-    func makeUIViewController(context: Context) -> UIImagePickerController {
+    public func makeUIViewController(context: Context) -> UIImagePickerController {
         
         let pickerController = UIImagePickerController()
         pickerController.delegate = context.coordinator
@@ -35,9 +35,9 @@ public struct CustomImagePicker: UIViewControllerRepresentable {
         return pickerController
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
+    public func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
     
-    final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    public final class ImagePickerCoordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
         @Binding var image: UIImage?
         
@@ -45,7 +45,7 @@ public struct CustomImagePicker: UIViewControllerRepresentable {
             _image = image
         }
         
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
             guard let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
             
@@ -53,7 +53,7 @@ public struct CustomImagePicker: UIViewControllerRepresentable {
             picker.dismiss(animated: true, completion: nil)
         }
         
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             print("Canceled")
             picker.dismiss(animated: true, completion: nil)
         }

@@ -53,7 +53,7 @@ public struct CustomAlert: View {
         self.displayTime = displayTime
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
             
             // Displaying Alert At Bottom Of Screen
@@ -98,7 +98,7 @@ public struct CustomAlert: View {
 
 
 /// Error Handle
-struct Handle {
+public struct Handle {
     
     /// Value Of Error Handle
     var value: ErrorHandle?
@@ -114,7 +114,7 @@ struct Handle {
 }
 
 /// Error Handle Value
-enum ErrorHandle: Error, Equatable {
+public enum ErrorHandle: Error, Equatable {
     
     /// Error For Display
     case err(_ description: String)

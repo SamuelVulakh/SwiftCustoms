@@ -8,13 +8,13 @@
 import SwiftUI
 
 /// Making Different Values Compatible With the Drop Down
-protocol DropDownUsable {
+public protocol DropDownUsable {
     var stringValue: String { get set }
 }
 
 /// Making A String Usable In The Drop Down
 extension String: DropDownUsable {
-    var stringValue: String {
+    public var stringValue: String {
         get { self }
         set { self = newValue }
     }
@@ -22,16 +22,15 @@ extension String: DropDownUsable {
 
 /// Making A Bool Usable In The Drop Down
 extension Bool: DropDownUsable {
-    var stringValue: String {
+    public var stringValue: String {
         get { description }
-        set {  }
-//        self = newValue == "true"
+        set { self = newValue == "true" }
     }
 }
 
 /// Making A CGFloat Usable In The Drop Down
 extension CGFloat: DropDownUsable {
-    var stringValue: String {
+    public var stringValue: String {
         get { description }
         set { self = CGFloat(Double(newValue) ?? 0.0) }
     }
@@ -39,7 +38,7 @@ extension CGFloat: DropDownUsable {
 
 /// Making A CGFloat Usable In The Drop Down
 extension Float: DropDownUsable {
-    var stringValue: String {
+    public var stringValue: String {
         get { description }
         set { self = Float(Double(newValue) ?? 0.0) }
     }
@@ -47,7 +46,7 @@ extension Float: DropDownUsable {
 
 /// Making A Integer Usable In The Drop Down
 extension Int: DropDownUsable {
-    var stringValue: String {
+    public var stringValue: String {
         get { description }
         set { self = Int(newValue) ?? 0 }
     }
@@ -130,7 +129,7 @@ public struct CustomDropDown: View {
         self.right = AnyView(right())
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
             
             // Title

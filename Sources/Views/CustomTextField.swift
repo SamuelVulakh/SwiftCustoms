@@ -146,7 +146,7 @@ public struct CustomTextField: View {
         self.right = AnyView(right())
     }
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
             
             // Title
@@ -243,7 +243,7 @@ public struct CustomTextField: View {
     }
     
     // Clearable Button Enum
-    enum Clearable: Equatable {
+    public enum Clearable: Equatable {
         case yes(animated: Bool = false, circle: Bool = true, action: ClearableAction? = nil)
         case no
         
@@ -280,11 +280,11 @@ public struct CustomTextField: View {
 }
 
 // Clearable Action
-struct ClearableAction: Equatable {
+public struct ClearableAction: Equatable {
     
     // Conforming To Equatable
-    static func == (lhs: ClearableAction, rhs: ClearableAction) -> Bool {
-        return true
+    public static func == (lhs: ClearableAction, rhs: ClearableAction) -> Bool {
+        return lhs.action() == rhs.action()
     }
     
     /// Additional Optional Action When Clearable Button Is Pressed

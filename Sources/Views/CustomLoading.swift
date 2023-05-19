@@ -24,7 +24,7 @@ public struct CustomLoading: View {
         self._loading = show
     }
     
-    var body: some View {
+    public var body: some View {
         Group {
             if loading {
                 ZStack {
