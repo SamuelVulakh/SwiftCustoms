@@ -64,6 +64,20 @@ Standard TextField         |  Password TextField      |  TextField With Title
 :-------------------------:|:-------------------------:|:-------------------------:
 ![](https://firebasestorage.googleapis.com/v0/b/shmulakh.appspot.com/o/CustomTextFIeld-Standard.png?alt=media&token=a2ed6f47-b718-466a-b72a-423edfbfbfb7)  |  ![](https://firebasestorage.googleapis.com/v0/b/shmulakh.appspot.com/o/CustomTextField-Password.png?alt=media&token=69dcbc88-32c4-47b2-b374-11679b70a9cb)  |  ![](https://firebasestorage.googleapis.com/v0/b/shmulakh.appspot.com/o/CustomTextField-ShowTitle.png?alt=media&token=d187ade8-1036-43ff-8bb8-b1fc180c2d99)
 
+If you'd like to make the CustomTextField clearable, simply set the ```clearable``` parameter to ```.yes()```. Here is an example:
+
+```swift
+    
+    // Clearable Initializer
+    .yes(animated: Bool = false, circle: Bool = true, action: ClearableAction? = nil)
+
+    // To add an additional action when the text is cleared
+    .yes(animated: false, circle: true, action: ClearableAction {
+        your code here
+    })
+    
+```
+
 ## CustomAlert
 The CustomAlert that I have built can use a Handle Object that takes in a value enum (either ```.notification("Some Text")``` or ```.error("Some Text")```) and a loading variable that is used for the CustomLoading object. You also have the option to use 3 variables for the ```error``` value, the ```text``` value, and the ```show```.
 
