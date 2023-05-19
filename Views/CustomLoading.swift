@@ -20,7 +20,7 @@ public struct CustomLoading: View {
     }
     
     // Initialization Using Bool
-    init(_ show: Binding<Bool>) {
+    public init(_ show: Binding<Bool>) {
         self._loading = show
     }
     

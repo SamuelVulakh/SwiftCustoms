@@ -107,7 +107,7 @@ public struct Handle {
     var loading: Bool
     
     // Initialization
-    init(_ value: ErrorHandle? = nil, loading: Bool = false) {
+    public init(_ value: ErrorHandle? = nil, loading: Bool = false) {
         self.value = value
         self.loading = loading
     }

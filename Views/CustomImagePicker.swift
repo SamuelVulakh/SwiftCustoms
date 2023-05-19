@@ -60,17 +60,17 @@ public struct CustomImagePicker: UIViewControllerRepresentable {
     }
 }
 
-extension View {
+public extension View {
     
     /// For Multiple Source Types
-    public func imagePicker(_ show: Binding<(Bool, UIImagePickerController.SourceType)>, image: Binding<UIImage?>) -> some View {
+    func imagePicker(_ show: Binding<(Bool, UIImagePickerController.SourceType)>, image: Binding<UIImage?>) -> some View {
         sheet(isPresented: show.0) {
             CustomImagePicker(image: image, type: show.1)
         }
     }
     
     /// One Single Source Image Picker
-    public func imagePicker(
+    func imagePicker(
         _ show: Binding<Bool>,
         image: Binding<UIImage?>,
         source: UIImagePickerController.SourceType = .photoLibrary
@@ -81,7 +81,7 @@ extension View {
     }
     
     /// Photo Library Image Picker
-    public func photoLibrary(_ show: Binding<Bool>, image: Binding<UIImage?>) -> some View {
+    func photoLibrary(_ show: Binding<Bool>, image: Binding<UIImage?>) -> some View {
         sheet(isPresented: show) {
             CustomImagePicker(image: image)
         }

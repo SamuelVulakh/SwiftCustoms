@@ -5,12 +5,11 @@
 //  Created by Samuel Vulakh on 5/17/23.
 //
 
-import Firebase
 import SwiftUI
 
 // All View Extensions
 @available(iOS 13.0, *)
-extension View {
+public extension View {
     
     /// Device Height
     var height: CGFloat { UIScreen.main.bounds.height }
@@ -25,7 +24,7 @@ extension View {
 
 // Shape Extensions
 @available(iOS 13.0, *)
-extension Shape {
+public extension Shape {
     /// Enabling Stroke Width Fill On A Shape
     func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
         self
@@ -36,7 +35,7 @@ extension Shape {
 
 // InsettableShape Extensions
 @available(iOS 13.0, *)
-extension InsettableShape {
+public extension InsettableShape {
     /// Enabling Stroke Width Fill On A Shape
     func fill<Fill: ShapeStyle, Stroke: ShapeStyle>(_ fillStyle: Fill, strokeBorder strokeStyle: Stroke, lineWidth: Double = 1) -> some View {
         self
@@ -47,7 +46,7 @@ extension InsettableShape {
 
 // All Color Extensions
 @available(iOS 13.0, *)
-extension Color {
+public extension Color {
     
     /// Allowing Initialization From A Hex String
     init(hex: String) {
@@ -76,36 +75,13 @@ extension Color {
     }
 }
 
-// Firestore Extensions
-extension Firestore {
-    
-    /// Users Database Collection Reference
-    static var users: CollectionReference { firestore().collection("users") }
-    
-    /// Get Current User Document (Is NIL If User Is Not Logged In)
-    static var current: DocumentReference? {
-        
-        /// Making Sure Current User ID Exists
-        guard let uid = Auth.auth().currentUser?.uid else { return nil }
-        
-        // Returning Current User Document If ID Is Valid
-        return Firestore.users.document(uid)
-    }
-}
-
-// Timestamp Extensions
 @available(iOS 13.0, *)
-extension Binding where Value == Timestamp {
-    var dateBind: Binding<Date> { .init { self.wrappedValue.dateValue() } set: { date in self.wrappedValue = Timestamp(date: date) } }
-}
-
-@available(iOS 13.0, *)
-struct RoundedCorner: Shape {
+public struct RoundedCorner: Shape {
 
     var radius: CGFloat = .infinity
     var corners: UIRectCorner = .allCorners
 
-    func path(in rect: CGRect) -> Path {
+    public func path(in rect: CGRect) -> Path {
         let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         return Path(path.cgPath)
     }
