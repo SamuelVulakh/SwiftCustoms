@@ -54,7 +54,7 @@ extension Int: DropDownUsable {
 }
 
 @available(iOS 14.0, *)
-struct CustomDropDown: View {
+public struct CustomDropDown: View {
     
     /// Value
     @Binding var value: DropDownUsable

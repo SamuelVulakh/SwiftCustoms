@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomImagePicker: UIViewControllerRepresentable {
+public struct CustomImagePicker: UIViewControllerRepresentable {
     
     /// The User Image To Be Selected
     @Binding var image: UIImage?

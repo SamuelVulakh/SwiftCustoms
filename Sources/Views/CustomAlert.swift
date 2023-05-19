@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Custom Alert View
 @available(iOS 13.0, *)
-struct CustomAlert: View {
+public struct CustomAlert: View {
 
     /// Error Handle
     var value: Binding<ErrorHandle?>

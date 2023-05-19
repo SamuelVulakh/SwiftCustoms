@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(iOS 15.0, *)
-struct CustomTextField: View {
+public struct CustomTextField: View {
     
     /// Text Value
     @Binding var text: String

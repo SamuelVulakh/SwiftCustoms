@@ -9,7 +9,7 @@ import ActivityIndicatorView
 import SwiftUI
 
 @available(iOS 14.0, *)
-struct CustomLoading: View {
+public struct CustomLoading: View {
     
     /// Loading Value
     @Binding var loading: Bool
