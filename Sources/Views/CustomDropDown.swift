@@ -95,7 +95,7 @@ struct CustomDropDown: View {
     /// If You Would Like To Add Right Content, You Can Do So Here
     let left: AnyView
 
-    init(
+    public init(
         _ title: String,
         value: Binding<some DropDownUsable>,
         options: [DropDownUsable],

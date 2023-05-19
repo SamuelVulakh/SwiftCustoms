@@ -15,7 +15,7 @@ struct CustomLoading: View {
     @Binding var loading: Bool
     
     // Initialization With Error Handle
-    init(_ handle: Binding<Handle>) {
+    public init(_ handle: Binding<Handle>) {
         self._loading = Binding { handle.loading.wrappedValue } set: { v in }
     }
     

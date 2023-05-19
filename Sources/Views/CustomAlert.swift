@@ -36,13 +36,13 @@ struct CustomAlert: View {
     }
     
     // Initializing From Error Handle
-    init(_ handle: Binding<Handle>, displayTime: Int = 2) {
+    public init(_ handle: Binding<Handle>, displayTime: Int = 2) {
         self.value = Binding { handle.wrappedValue.value } set: { v in handle.wrappedValue = Handle(v) }
         self.displayTime = displayTime
     }
     
     // Initialization From Standard Variable
-    init(_ show: Binding<Bool>, error: Binding<Bool>, text: Binding<String>, displayTime: Int = 2) {
+    public init(_ show: Binding<Bool>, error: Binding<Bool>, text: Binding<String>, displayTime: Int = 2) {
         self.value = Binding {
             show.wrappedValue ? error.wrappedValue ? .err(text.wrappedValue) : .notification(text.wrappedValue) : nil
         } set: { _ in
