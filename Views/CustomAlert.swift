@@ -101,10 +101,10 @@ public struct CustomAlert: View {
 public struct Handle {
     
     /// Value Of Error Handle
-    var value: ErrorHandle?
+    public var value: ErrorHandle?
     
     /// General Loading
-    var loading: Bool
+    public var loading: Bool
     
     // Initialization
     public init(_ value: ErrorHandle? = nil, loading: Bool = false) {
