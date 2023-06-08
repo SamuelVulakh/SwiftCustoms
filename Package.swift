@@ -14,7 +14,7 @@ let package = Package(
         .library(name: "CustomFirebase", targets: ["CustomFirebase"])
     ],
     dependencies: [
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: Version("8.7.0")),
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: Version("9.0.0")),
         .package(url: "https://github.com/exyte/ActivityIndicatorView.git", from: Version("1.1.1"))
     ],
     targets: [
