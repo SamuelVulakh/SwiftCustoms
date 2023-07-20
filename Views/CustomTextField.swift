@@ -159,9 +159,7 @@ public struct CustomTextField: View {
             HStack(spacing: 15) {
                 
                 // If There Is Left Content, Display it
-                if let left {
-                    left
-                }
+                left
                 
                 // If it is a password then you choose whether it is secure or not
                 if isPassword && !showPasswordText {
