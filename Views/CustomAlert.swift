@@ -86,7 +86,7 @@ public struct CustomAlert: View {
         // Descreasing Time Remaining When Timer Value Changes
         .onAppear { time = displayTime }
         .onReceive(timer) { _ in
-            if time > 0 {
+            if time > 0 && value != nil {
                 time -= 1
             } else {
                 time = displayTime
